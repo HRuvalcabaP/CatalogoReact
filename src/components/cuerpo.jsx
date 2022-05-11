@@ -1,4 +1,10 @@
+import React, { useState } from 'react';
+
 const Cuerpo = () => {
+
+    const [count, setCount] = useState(0);
+
+
     return(
         <div className="d-flex p-5">
             
@@ -29,6 +35,22 @@ const Cuerpo = () => {
                 <p>SNEAKER COMPANY</p>
                 <h1>Fall Limited Edition Sneaker</h1>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi eos magni accusamus nostrum cupiditate aperiam!</p>
+
+                <h3>$25,000.00</h3>
+
+                <div className="d-flex justify-content-around mt-5 align-items-center rounded">
+                   
+                    <div className="d-flex justify-content-around w-50">
+                        <button disabled = {count === 0 ? true: false} className="btn border-secondary" onClick={() => setCount(count - 1)}>-</button>
+                        <p className="mt-2">{count}</p>
+                        <button className="btn border-secondary" onClick={() => setCount(count + 1)}>+</button>
+                    </div>
+                   
+                   <div className="w-50">
+                        <button className="btn btn-warning bg-warning w-100" onClick={() => {alert("Agregado")}}>Add to Cart</button>
+                   </div>
+                   
+                </div>
             </div>
         </div>
     )
